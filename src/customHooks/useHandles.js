@@ -32,7 +32,7 @@ export const useHandles = () => {
 
   const handleEditTask = (id, description) => {
     const action = {
-      type: "edite",
+      type: "edit",
       payload: {
         id,
         description,

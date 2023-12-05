@@ -1,11 +1,11 @@
-import { DeleteTask } from "./DeleteTask";
+import { ListItem } from "./ListItem";
 
-export const LiComponent = ({ states, handleDeleteTask, handleEditTask }) => {
+export const ListComponent = ({ states, handleDeleteTask, handleEditTask }) => {
   return (
     <ul className="task__ul">
       {states.map((state) => (
         /* Delete Button & Task Return */
-        <DeleteTask
+        <ListItem
           key={state.id}
           state={state}
           handleDeleteTask={handleDeleteTask}

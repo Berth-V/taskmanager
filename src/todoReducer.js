@@ -11,10 +11,11 @@ export const todoReducer = (states, action) => {
         if (state.id === action.payload.id) {
           return {
             ...state,
-            description: actionpayload.description,
+            description: action.payload.description,
           };
         }
       });
+
     default:
       return states;
   }

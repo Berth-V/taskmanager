@@ -2,11 +2,15 @@ import { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 
 export const AddTask = ({ handleNewTask }) => {
-  const [text, setText] = useState();
+  const [text, setText] = useState("");
 
   const onAddSubmit = (e) => {
     e.preventDefault();
-    let newTask = { id: Date.now(), content: text };
+
+    if (text.length <= 1) return;
+
+    let newTask = { id: Date.now(), description: text };
+
     handleNewTask(newTask);
     setText("");
   };
@@ -16,9 +20,9 @@ export const AddTask = ({ handleNewTask }) => {
   };
 
   return (
-    <form className="input__box" onSubmit={onAddSubmit}>
+    <form className="add__task__form" onSubmit={onAddSubmit}>
       <input
-        className="input"
+        className="add__task__input"
         name="myInput"
         placeholder="Enter Task"
         value={text}

@@ -1,7 +1,7 @@
 import "./App.css";
-import { LiComponent } from "./components/LiComponent";
-import { AddTask } from "./components/AddTask";
 import { useHandles } from "./customHooks/useHandles";
+import { AddTask } from "./components/AddTask";
+import { ListComponent } from "./components/ListComponent";
 
 function App() {
   const { states, handleNewTask, handleDeleteTask, handleEditTask } =
@@ -11,7 +11,7 @@ function App() {
       <div className="taskmanager">
         <h1 className="taskmanager__h1">Task Manager</h1>
         <AddTask handleNewTask={handleNewTask} />
-        <LiComponent
+        <ListComponent
           states={states}
           handleDeleteTask={handleDeleteTask}
           handleEditTask={handleEditTask}
