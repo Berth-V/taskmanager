@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto+Flex:opsz,wght@8..144,100&display=swap');
 
-:root{
-  --background-color: linear-gradient(222deg, rgba(18,38,38,1) 18%, rgba(0,31,30,1) 100%);
-  --add-task-background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+:root {
+  --background-color: linear-gradient(
+    222deg,
+    rgba(18, 38, 38, 1) 18%,
+    rgba(0, 31, 30, 1) 100%
+  );
+  --add-task-background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
   --add-btn-color: #006155;
-  --add-btn-hover: #00AC97;
-  --add-input-background: rgba(0,0,0,0.2);
-  --list-btn-color: #FF7D6A;
-  --list-btn-hover: #FF6827;
+  --add-btn-hover: #00ac97;
+  --add-input-background: rgba(0, 0, 0, 0.2);
+  --list-btn-color: #ff7d6a;
+  --list-btn-hover: #ff6827;
 }
 
-.body{
+.body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,7 +23,7 @@
   height: auto;
 }
 
-.taskmanager{
+.taskmanager {
   height: 100dvh;
   width: 100vw;
   display: flex;
@@ -28,29 +32,29 @@
   background: var(--background-color);
 }
 
-.taskmanager__h1{
+.taskmanager__h1 {
   text-align: center;
   font-size: 40px;
   font-weight: 500;
   height: 3.5rem;
   padding: 0 1rem;
   border-radius: 10px;
-  color:floralwhite;
+  color: floralwhite;
 }
 
-.add__task__form{
+.add__task__form {
   font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   width: 22rem;
-  gap: .5rem;
-  padding: .5rem 1rem;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
   background: var(--add-task-background);
 }
 
-.add__task__input{
+.add__task__input {
   border: none;
   height: 2rem;
   flex-grow: 1;
@@ -60,16 +64,16 @@
   color: aliceblue;
 }
 
-.add__task__input::placeholder{
+.add__task__input::placeholder {
   color: aliceblue;
 }
 
-.add__task__input:focus{
+.add__task__input:focus {
   color: aliceblue;
   outline: unset;
 }
 
-.add__task__btn{
+.add__task__btn {
   height: 2.5rem;
   width: 5rem;
   display: flex;
@@ -81,16 +85,16 @@
   transition-duration: 0.3s;
 }
 
-.add__task__btn:hover{
+.add__task__btn:hover {
   background-color: var(--add-btn-hover);
   border: none;
 }
 
-.add__icon{
+.add__icon {
   font-size: 1.2rem;
 }
 
-.task__ul{
+.task__ul {
   list-style: none;
   text-decoration: none;
   margin: 0;
@@ -101,62 +105,62 @@
   overflow-y: auto;
 }
 
-::-webkit-scrollbar{
-  width: .5rem;
-  height: .5rem;
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 100vw;
   background-color: var(--add-btn-color);
 }
 
-.task__li{
+.task__li {
   display: flex;
   justify-content: space-between;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   padding: 1rem;
   min-width: 30rem;
   border-bottom: 1px solid #909090;
 }
 
-.delete__task__btn{
+.delete__task__btn {
   background-color: var(--list-btn-color);
   transition-property: all;
   transition-duration: 0.3s;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
-.delete__task__btn:hover{
+.delete__task__btn:hover {
   background-color: var(--list-btn-hover);
   border-color: var(--list-btn-hover);
 }
 
-.delete__icon{
+.delete__icon {
   font-size: 1.2rem;
 }
 
-.edit__btn{
+.edit__btn {
   background-color: var(--list-btn-color);
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
-.edit__btn:hover{
+.edit__btn:hover {
   background-color: var(--list-btn-hover);
   border-color: var(--list-btn-hover);
 }
 
-.edit__icon{
+.edit__icon {
   font-size: 1.2rem;
 }
 
-.task__box{
+.task__box {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.task{
+.task {
   border: none;
   background-color: unset;
   outline: none;

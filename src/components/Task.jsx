@@ -1,10 +1,10 @@
-import { useRef, useState } from "react";
-import { HiOutlinePencilSquare } from "react-icons/hi2";
-import { useForm } from "../customHooks/useForm";
+import {useRef, useState} from 'react';
+import {HiOutlinePencilSquare} from 'react-icons/hi2';
+import {useForm} from '../customHooks/useForm';
 
-export const Task = ({ state, handleEditTask }) => {
-  const { editedDescription, onInputChange } = useForm({
-    editedDescription: state.description,
+export const Task = ({task, handleEditTask}) => {
+  const {editedDescription, onInputChange} = useForm({
+    editedDescription: task.description,
   });
 
   const ref = useRef();
@@ -14,7 +14,7 @@ export const Task = ({ state, handleEditTask }) => {
   const onSubmitEdit = (e) => {
     e.preventDefault();
 
-    const id = state.id;
+    const id = task.id;
     const description = editedDescription;
 
     handleEditTask(id, description);
@@ -25,19 +25,19 @@ export const Task = ({ state, handleEditTask }) => {
   };
 
   return (
-    <form onSubmit={onSubmitEdit} className="task__box">
+    <form onSubmit={onSubmitEdit} className='task__box'>
       <input
-        className="task"
-        type="text"
-        name="editedDescription"
-        placeholder="Enter Task"
+        className='task'
+        type='text'
+        name='editedDescription'
+        placeholder='Enter Task'
         value={editedDescription}
         onChange={onInputChange}
         readOnly={disabled}
         ref={ref}
       ></input>
-      <button className="edit__btn" type="submit">
-        <HiOutlinePencilSquare className="edit__icon" />
+      <button className='edit__btn' type='submit'>
+        <HiOutlinePencilSquare className='edit__icon' />
       </button>
     </form>
   );

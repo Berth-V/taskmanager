@@ -1,35 +1,33 @@
-import { useState } from "react";
-import { FaPlus } from "react-icons/fa6";
+import {FaPlus} from 'react-icons/fa6';
+import {useForm} from '../customHooks/useForm';
 
-export const AddTask = ({ handleNewTask }) => {
-  const [text, setText] = useState("");
+export const AddTask = ({handleNewTask}) => {
+  const {description, onInputChange, onResetForm} = useForm({
+    description: '',
+  });
 
   const onAddSubmit = (e) => {
     e.preventDefault();
 
-    if (text.length <= 1) return;
+    if (description.length <= 1) return;
 
-    let newTask = { id: Date.now(), description: text };
+    let newTask = {id: new Date().getTime(), description: description};
 
     handleNewTask(newTask);
-    setText("");
-  };
-
-  const onInputChange = (e) => {
-    setText(e.target.value);
+    onResetForm();
   };
 
   return (
-    <form className="add__task__form" onSubmit={onAddSubmit}>
+    <form className='add__task__form' onSubmit={onAddSubmit}>
       <input
-        className="add__task__input"
-        name="myInput"
-        placeholder="Enter Task"
-        value={text}
+        className='add__task__input'
+        name='description'
+        placeholder='Enter Task'
+        value={description}
         onChange={onInputChange}
       />
-      <button className="add__task__btn" type="submit">
-        <FaPlus className="add__icon" />
+      <button className='add__task__btn' type='submit'>
+        <FaPlus className='add__icon' />
       </button>
     </form>
   );
